@@ -11,10 +11,10 @@ def hello():
     return "Hello World!"
 
 
-@app.route('/bot', methods=['POST'])
+@app.route('/bot', methods=['POST', 'GET'])
 def bot():
     incoming_msg = request.values.get('Body', '')
-    # print(incoming_msg)
+    print(incoming_msg)
     resp = MessagingResponse()
     msg = resp.message()
     responded = False
