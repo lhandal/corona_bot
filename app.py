@@ -13,8 +13,8 @@ def hello():
 
 @app.route('/bot', methods=['POST'])
 def bot():
-    incoming_msg = request.values.get('Body', '')
-    # print(incoming_msg)
+    incoming_msg = request.values.get('Body')
+    print(incoming_msg)
     resp = MessagingResponse()
     msg = resp.message()
     responded = False
