@@ -5,25 +5,27 @@ from twilio.twiml.messaging_response import MessagingResponse
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def hello():
     return "Hello World!"
 
-# msg.body('this is the response text')
-# msg.media('https://example.com/path/image.jpg')
 
 @app.route('/bot', methods=['POST'])
 def bot():
-    incoming_msg = request.values.get('Body', '').lower()
-    print(incoming_msg)
+    incoming_msg = request.values.get('Body', '')
+    # print(incoming_msg)
     resp = MessagingResponse()
     msg = resp.message()
     responded = False
 
-    if 'hola' in incoming_msg :
-        text = f'Hola bola!'
+    if 'Hi' in incoming_msg or 'Hey' in incoming_msg or 'Heya' in incoming_msg or 'Menu' in incoming_msg:
+        text = f'Hello hello'
         msg.body(text)
         responded = True
+
+    if responded == False:
+        msg.body('I only know about corona, sorry!')
 
     return str(resp)
 
