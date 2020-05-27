@@ -9,8 +9,8 @@ app = Flask(__name__)
 def hello():
     return "Hello World!"
 
-msg.body('this is the response text')
-msg.media('https://example.com/path/image.jpg')
+# msg.body('this is the response text')
+# msg.media('https://example.com/path/image.jpg')
 
 @app.route('/bot', methods=['POST'])
 def bot():
@@ -20,11 +20,12 @@ def bot():
     msg = resp.message()
     responded = False
 
-    if 'Hi' in incoming_msg :
+    if 'hola' in incoming_msg :
         text = f'Hola bola!'
         msg.body(text)
         responded = True
 
+    return str(resp)
 
 
 if __name__ == "__main__":
