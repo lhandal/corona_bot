@@ -1,3 +1,5 @@
+import unicodedata
+
 def normalize_text(text):
     try:
         text = unicode(text, 'utf-8')
