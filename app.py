@@ -11,11 +11,9 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST'])
 
-def hello():
-    return "Bot is up and running!"
 
 def bot():
-    incoming_msg = request.values.get('Body', '').lower()
+    incoming_msg = request.values.get('Body').lower()
     print(incoming_msg)
     resp = MessagingResponse()
     msg = resp.message()
