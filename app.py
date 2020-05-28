@@ -44,7 +44,7 @@ Recuperados: {info[4]}
         responded = True
 
     if 'sintoma' in incoming_msg:
-        text = '''Si tienes los uno de los siguientes síntomas y tuviste contacto cercano con algún caso positivo o sospechoso de COVID-19, o estuviste en alguna región de Bolivia o el exterior con casos positivos ponte en contacto con las líneas gratuitas.
+        text = '''Si tienes los uno de estos síntomas y tuviste contacto cercano con algún caso positivo o sospechoso de COVID-19, o estuviste en alguna región de Bolivia o el exterior con casos positivos ponte en contacto con las líneas gratuitas.
 \n 📞 800 10 1104
 \n 📞 800 10 1106'''
         img_address = 'https://www.boliviasegura.gob.bo/images/covid2.jpg'
