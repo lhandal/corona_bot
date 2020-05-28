@@ -20,13 +20,24 @@ def bot():
     msg = resp.message()
     responded = False
 
+    departamentos = ['Beni','Chuquisaca','Cochabamba','La Paz','Oruro','Pando','Potosí','Santa Cruz','Tarija']
+
     if 'hi' in incoming_msg or 'hola' in incoming_msg or 'holi' in incoming_msg or 'menu' in incoming_msg:
         text = f'*Hola!* 👋🏼\nSoy Juan, el robot mas 🔝 de esta cuarentena!\n\nA tus ordenes!'
         msg = msg.body(text)
         responded = True
 
-    if 'la paz' in incoming_msg:
-        text = str(get_info('la paz'))
+    if any(dep.lower().replace(' ', '_') in incoming_msg.replace(' ', '_') for dep in departamentos):
+        fecha, info = str(get_info(incoming_msg))
+        text = f"""
+                *{info[0]}*
+                Al día {fecha} 
+                Nuevos casos: {info[1]}
+                Total casos: {info[2]}
+                Decesos: {info[3]}
+                Recuperados: {info[4]}
+                
+                """
         msg = msg.body(text)
         responded = True
 
