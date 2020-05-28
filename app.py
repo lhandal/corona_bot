@@ -61,9 +61,6 @@ Evalúa tu estado de salud en línea, registra tus síntomas, recibe instruccion
 
     if responded == False:
         msg.body('Lo siento, no tengo implementada esa opción aún...')
-
-    https: // autoevaluacioncovid19.agetic.gob.bo /
-
     return str(resp)
 
 
