@@ -2,27 +2,28 @@ from flask import Flask, request
 import requests
 import os
 import json
+import datetime
+import emoji
 from twilio.twiml.messaging_response import MessagingResponse
 
 app = Flask(__name__)
 
 
-# @app.route("/", methods=['POST'])
-# def hello():
-#     return "Hello World!"
-
-
 @app.route('/', methods=['POST'])
+
+def hello():
+    return "Bot is up and running!"
+
 def bot():
-    incoming_msg = request.values.get('Body', '')
-    print(incoming_msg)
+    incoming_msg = request.values.get('Body', '').lower()
+    # print(incoming_msg)
     resp = MessagingResponse()
     msg = resp.message()
     responded = False
 
-    if 'Hi' in incoming_msg or 'Hey' in incoming_msg or 'Heya' in incoming_msg or 'Menu' in incoming_msg:
-        text = f'Hello hello'
-        msg.body(text)
+    if 'hi' in incoming_msg or 'hola' in incoming_msg or 'holi' in incoming_msg or 'menu' in incoming_msg:
+        text = f'*Hola! :wave:*\nSoy Juan, el robot mas top de esta cuarentena!'
+        msg = msg.body(emoji.emojize(text, use_aliases=True))
         responded = True
 
     if responded == False:
