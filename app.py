@@ -25,7 +25,10 @@ def bot():
 
     if 'hi' in incoming_msg or 'hola' in incoming_msg or 'holi' in incoming_msg or 'menu' in incoming_msg:
         text = f'''*Hola!* 👋🏼\nSoy Corona Bot, el robot mas 🔝 de esta cuarentena!\n\nA tus ordenes!\n
-¿Quieres saber las estadisticas de coronavirus en algun departamento de Bolivia 🇧🇴? \n\n Puedes mandarme el nombre del departamento o la palabra "nacional" para datos de todo el pais!'''
+¿Quieres saber las estadisticas de coronavirus en Bolivia 🇧🇴? \n
+◼️Envia el nombre del departamento o la palabra *nacional* para datos de todo el pais. \n
+◼️Envia *sintomas* para información acerca de los síntomas y recomendaciones.️\n
+◼️Envia *evaluacion* para ir a una autoevaluacion de COVID-19\n'''
         msg = msg.body(text)
         responded = True
 
