@@ -52,10 +52,10 @@ Recuperados: {info[4]}
         msg.media(img_address)
         responded = True
 
-    if 'evalucaion' in incoming_msg:
+    if 'evaluacion' in incoming_msg:
         text = '''¿Te sientes enfermo? 🤒
 Evalúa tu estado de salud en línea, registra tus síntomas, recibe instrucciones y recomendaciones sobre el Coronavirus COVID-19 de acuerdo los protocolos establecidos por la Organización Mundial de la Salud y el Gobierno del Estado Plurinacional de Bolivia.
-\n\nhttps: // autoevaluacioncovid19.agetic.gob.bo'''
+\n\nautoevaluacioncovid19.agetic.gob.bo'''
         msg.body(text)
         responded = True
 
