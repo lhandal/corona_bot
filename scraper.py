@@ -21,7 +21,8 @@ def get_info(dept):
     nacional_decesos = cleanhtml(soup.find_all('td')[:3][1])
     nacional_recuperados = cleanhtml(soup.find_all('td')[:3][2])
 
-    nacional =['Nacional', nacional_hoy, nacional_total, nacional_decesos, nacional_recuperados]
+    nacional =['Bolivia', nacional_hoy, nacional_total, nacional_decesos, nacional_recuperados]
+    bolivia = ['Bolivia', nacional_hoy, nacional_total, nacional_decesos, nacional_recuperados]
 
     ls = []
     for element in soup.find_all('td')[3:48]:
