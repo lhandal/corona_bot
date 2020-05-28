@@ -26,13 +26,13 @@ def bot():
     if 'hi' in incoming_msg or 'hola' in incoming_msg or 'holi' in incoming_msg or 'menu' in incoming_msg:
         text = f'''*Hola!* 👋🏼\nSoy Corona Bot 👑🤖, el robot mas 🔝 de esta cuarentena!\n\nA tus ordenes!\n
 ¿Quieres saber las estadisticas de coronavirus en Bolivia 🇧🇴? \n
-🦠️ Envia el nombre del departamento o la palabra *nacional* para datos de todo el pais. \n
+🦠️ Envia el *nombre del departamento* o la palabra *nacional* para datos de todo el pais. \n
 🦠️ Envia *sintomas* para información acerca de los síntomas y recomendaciones.️\n
 🦠 Envia *evaluacion* para ir a una autoevaluacion de COVID-19.\n
 🦠 Envia *ayudar* para informarte como puedes ayudar.\n
-🦠 Envia *comunicado* para recibir el ultimo comunicado oficial
+🦠 Envia *comunicado* para recibir el ultimo comunicado oficial.\n
+🦠 Envia *mundo* para recibir una noticia sobre COVID-19 en el mundo.\n
 
-Para mas información visita https://www.boliviasegura.gob.bo/
 
 *#QuedateEnCasa*
 '''
@@ -87,7 +87,7 @@ En los siguientes links entontraras informacion de formas para donar a la gente 
         msg.media(img_address)
         responded = True
 
-    if 'plague' in incoming_msg:
+    if 'plague' in incoming_msg or 'mundo' in incoming_msg:
         text = '😬'
         img_address = plague()
         msg.body(text)
@@ -95,7 +95,9 @@ En los siguientes links entontraras informacion de formas para donar a la gente 
         responded = True
 
     if responded == False:
-        msg.body('Lo siento, no tengo implementada esa opción aún...')
+        msg.body('''Lo siento, no tengo implementada esa opción aún...\n
+Para mas informacion visita: 
+boliviasegura.gob.bo''')
     return str(resp)
 
 
