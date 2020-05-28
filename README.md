@@ -58,6 +58,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+I appologize in advance because some of the code and the screenshots provided are in spanish, since the project is intended for a Bolivian public and spanish is the main spoken language. I do plan to bring this bot to a larger global audience in the future.
+
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
