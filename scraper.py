@@ -15,7 +15,7 @@ def get_info(dept):
 
     fecha = cleanhtml(soup.find_all('h5')[0])
 
-    nacional_hoy = cleanhtml(soup.find_all('h4')[0])
+    nacional_hoy = cleanhtml(soup.find_all('h4')[0]).split('HOY: ')[1]
 
     nacional_total = cleanhtml(soup.find_all('td')[:3][0])
     nacional_decesos = cleanhtml(soup.find_all('td')[:3][1])

@@ -30,33 +30,31 @@ def bot():
     if any(dep.lower().replace(' ', '_') in incoming_msg.replace(' ', '_') for dep in departamentos):
         fecha, info = get_info(incoming_msg)
         text = f"""
-                *{info[0]}*
-                Al día {fecha} 
-                Nuevos casos: {info[1]}
-                Total casos: {info[2]}
-                Decesos: {info[3]}
-                Recuperados: {info[4]}
-                
-                """
+        *{info[0]}*
+        Al día {fecha} 
+        Nuevos casos: {info[1]}
+        Total casos: {info[2]}
+        Decesos: {info[3]}
+        Recuperados: {info[4]}
+        
+        """
         msg = msg.body(text)
         responded = True
 
     if 'todo' in incoming_msg:
-        text = ''
         for i in departamentos:
 
             fecha, info = get_info(i)
-            part = f"""
-                    *{info[0]}*
-                    Al día {fecha} 
-                    Nuevos casos: {info[1]}
-                    Total casos: {info[2]}
-                    Decesos: {info[3]}
-                    Recuperados: {info[4]}
-    
-                    """
-            text += part + '\n'
-        msg = msg.body(text)
+            text = f"""
+            *{info[0]}*
+            Al día {fecha} 
+            Nuevos casos: {info[1]}
+            Total casos: {info[2]}
+            Decesos: {info[3]}
+            Recuperados: {info[4]}
+
+            """
+            msg = msg.body(text)
         responded = True
 
     if responded == False:
