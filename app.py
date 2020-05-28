@@ -5,6 +5,7 @@ import json
 import datetime
 import emoji
 from twilio.twiml.messaging_response import MessagingResponse
+from scraper import *
 
 app = Flask(__name__)
 
@@ -20,7 +21,12 @@ def bot():
     responded = False
 
     if 'hi' in incoming_msg or 'hola' in incoming_msg or 'holi' in incoming_msg or 'menu' in incoming_msg:
-        text = f'*Hola!* 👋🏼\nSoy Juan, el robot mas top de esta cuarentena!'
+        text = f'*Hola!* 👋🏼\nSoy Juan, el robot mas 🔝 de esta cuarentena!\n\nA tus ordenes!'
+        msg = msg.body(text)
+        responded = True
+
+    if 'la paz' in incoming_msg:
+        text = str(get_info('la paz'))
         msg = msg.body(text)
         responded = True
 
@@ -31,5 +37,4 @@ def bot():
 
 
 if __name__ == "__main__":
-    # port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=5000, debug=True)
