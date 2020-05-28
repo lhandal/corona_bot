@@ -42,21 +42,13 @@ Recuperados: {info[4]}
         msg = msg.body(text)
         responded = True
 
-    if 'todo' in incoming_msg:
-        for i in departamentos:
-
-            fecha, info = get_info(i)
-            part = f"""
-            *{info[0]}*
-            Al día {fecha} 
-            Nuevos casos: {info[1]}
-            Total casos: {info[2]}
-            Decesos: {info[3]}
-            Recuperados: {info[4]}
-
-            """
-            text += part + '\n'
+    if 'sintoma' in incoming_msg:
+        text = '''Si tienes los uno de los siguientes síntomas y tuviste contacto cercano con algún caso positivo o sospechoso de COVID-19, o estuviste en alguna región de Bolivia o el exterior con casos positivos ponte en contacto con las líneas gratuitas.
+\n 📞 800 10 1104
+\n 📞 800 10 1106'''
+        img_address = 'https://www.boliviasegura.gob.bo/images/covid2.jpg'
         msg = msg.body(text)
+        msg.media(img_address)
         responded = True
 
     if responded == False:
