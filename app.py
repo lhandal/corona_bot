@@ -47,13 +47,22 @@ Recuperados: {info[4]}
         text = '''Si tienes los uno de estos síntomas y tuviste contacto cercano con algún caso positivo o sospechoso de COVID-19, o estuviste en alguna región de Bolivia o el exterior con casos positivos ponte en contacto con las líneas gratuitas.
 \n 📞 800 10 1104
 \n 📞 800 10 1106'''
-        img_address = 'https://www.boliviasegura.gob.bo/images/covid2.jpg'
+        img_address = 'https://github.com/lhandal/corona_bot/tree/master/static_images/sintomas.png'
         msg.body(text)
         msg.media(img_address)
         responded = True
 
+    if 'evalucaion' in incoming_msg:
+        text = '''¿Te sientes enfermo? 🤒
+Evalúa tu estado de salud en línea, registra tus síntomas, recibe instrucciones y recomendaciones sobre el Coronavirus COVID-19 de acuerdo los protocolos establecidos por la Organización Mundial de la Salud y el Gobierno del Estado Plurinacional de Bolivia.
+\n\nhttps: // autoevaluacioncovid19.agetic.gob.bo'''
+        msg.body(text)
+        responded = True
+
     if responded == False:
         msg.body('Lo siento, no tengo implementada esa opción aún...')
+
+    https: // autoevaluacioncovid19.agetic.gob.bo /
 
     return str(resp)
 
