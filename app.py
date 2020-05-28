@@ -24,14 +24,17 @@ def bot():
     departamentos = ['Bolivia', 'Nacional', 'Beni','Chuquisaca','Cochabamba','La Paz','Oruro','Pando','Potosí','Santa Cruz','Tarija']
 
     if 'hi' in incoming_msg or 'hola' in incoming_msg or 'holi' in incoming_msg or 'menu' in incoming_msg:
-        text = f'''*Hola!* 👋🏼\nSoy Corona Bot, el robot mas 🔝 de esta cuarentena!\n\nA tus ordenes!\n
+        text = f'''*Hola!* 👋🏼\nSoy Corona Bot 👑🤖, el robot mas 🔝 de esta cuarentena!\n\nA tus ordenes!\n
 ¿Quieres saber las estadisticas de coronavirus en Bolivia 🇧🇴? \n
-◼️ Envia el nombre del departamento o la palabra *nacional* para datos de todo el pais. \n
-◼️ Envia *sintomas* para información acerca de los síntomas y recomendaciones.️\n
-◼️ Envia *evaluacion* para ir a una autoevaluacion de COVID-19.\n
-◼️ Envia *ayudar* para informarte como puedes ayudar.\n
+🦠️ Envia el nombre del departamento o la palabra *nacional* para datos de todo el pais. \n
+🦠️ Envia *sintomas* para información acerca de los síntomas y recomendaciones.️\n
+🦠 Envia *evaluacion* para ir a una autoevaluacion de COVID-19.\n
+🦠 Envia *ayudar* para informarte como puedes ayudar.\n
+🦠 Envia *comunicado* para recibir el ultimo comunicado oficial
 
-Para mas información visita
+Para mas información visita https://www.boliviasegura.gob.bo/
+
+*#QuedateEnCasa*
 '''
         msg = msg.body(text)
         responded = True
@@ -60,26 +63,33 @@ Recuperados: {info[4]}
         responded = True
 
     if 'evaluacion' in incoming_msg:
-        text = '''¿Te sientes enfermo? 🤒
+        text = '''*¿Te sientes enfermo?* 🤒 \n
 Evalúa tu estado de salud en línea, registra tus síntomas, recibe instrucciones y recomendaciones sobre el Coronavirus COVID-19 de acuerdo los protocolos establecidos por la Organización Mundial de la Salud y el Gobierno del Estado Plurinacional de Bolivia.
 \n\nautoevaluacioncovid19.agetic.gob.bo'''
         msg.body(text)
         responded = True
 
     if 'ayuda' in incoming_msg:
-        text = '''¿Quieres ayudar?
+        text = '''*¿Quieres ayudar?* \n
 En los siguientes links entontraras informacion de formas para donar a la gente que mas lo necesita:
 
-*COVID BOLIVIA*
+*_COVID BOLIVIA_*
 ❤️ www.covid-bolivia.com/donaciones
 
-*Una Mano Para Mamá*
+*_Una Mano Para Mamá_*
 ❤️ gf.me/u/xycj2f'''
         msg.body(text)
         responded = True
 
     if 'comunicado' in incoming_msg:
         text, img_address = get_comm()
+        msg.body(text)
+        msg.media(img_address)
+        responded = True
+
+    if 'plague' in incoming_msg:
+        text = '😬'
+        img_address = plague()
         msg.body(text)
         msg.media(img_address)
         responded = True

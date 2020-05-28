@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import re
+from facebook_scraper import get_posts
 
 def cleanhtml(raw_html):
     raw_html = str(raw_html)
@@ -47,3 +48,9 @@ def get_comm():
     header = text.split('</a>')[0]
 
     return header, jpg
+
+def plague():
+    for post in get_posts('GlobalNewsCovid19', pages=1):
+        jpg = post['image']
+        break
+    return jpg
