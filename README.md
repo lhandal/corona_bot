@@ -215,11 +215,11 @@ Project Link: [https://https://github.com/lhandal/corona-bot](https://https://gi
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/lhandal/corona-bot.svg?style=flat-square
 [contributors-url]: https://https://github.com/lhandal/corona-bot/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/lhandal/corona-bot.svg?style=flat-square
+[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=flat-square
 [forks-url]: https://https://github.com/lhandal/corona-bot/network/members
-[stars-shield]: https://img.shields.io/github/stars/lhandal/corona-bot.svg?style=flat-square
+[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=flat-square
 [stars-url]: https://https://github.com/lhandal/corona-bot/stargazers
-[license-shield]: https://img.shields.io/github/license/lhandal/corona-bot.svg?style=flat-square
+[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=flat-square
 [license-url]: https://https://github.com/lhandal/corona-bot/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/lhandal
