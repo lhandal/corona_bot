@@ -16,14 +16,14 @@ def hello():
 
 def bot():
     incoming_msg = request.values.get('Body', '').lower()
-    # print(incoming_msg)
+    print(incoming_msg)
     resp = MessagingResponse()
     msg = resp.message()
     responded = False
 
     if 'hi' in incoming_msg or 'hola' in incoming_msg or 'holi' in incoming_msg or 'menu' in incoming_msg:
-        text = f'*Hola! :wave:*\nSoy Juan, el robot mas top de esta cuarentena!'
-        msg = msg.body(emoji.emojize(text, use_aliases=True))
+        text = f'*Hola!* 👋🏼\nSoy Juan, el robot mas top de esta cuarentena!'
+        msg = msg.body(text)
         responded = True
 
     if responded == False:
