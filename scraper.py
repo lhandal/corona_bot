@@ -37,3 +37,13 @@ def get_info(dept):
 
     value = dept.lower().replace(" ", "_")
     return fecha, eval(value)
+
+
+def get_comm():
+    x = requests.get(f'https://www.boliviasegura.gob.bo/comunicados.php').text.find('COMUNICADO ')
+    text = requests.get(f'https://www.boliviasegura.gob.bo/comunicados.php').text[x:].split('><img')[0]
+    num = text.split('?Seleccion=')[1][:-1]
+    jpg = f"https://www.boliviasegura.gob.bo/archivos/noticia{num}.jpg"
+    header = text.split('</a>')[0]
+
+    return header, jpg
