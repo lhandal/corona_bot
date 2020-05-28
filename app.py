@@ -6,6 +6,7 @@ import datetime
 import emoji
 from twilio.twiml.messaging_response import MessagingResponse
 from scraper import *
+from helper_functions import normalize_text
 
 app = Flask(__name__)
 
@@ -14,7 +15,7 @@ app = Flask(__name__)
 
 
 def bot():
-    incoming_msg = request.values.get('Body').lower()
+    incoming_msg = normalize_text(request.values.get('Body'))
     print(incoming_msg)
     resp = MessagingResponse()
     msg = resp.message()
@@ -47,7 +48,7 @@ Recuperados: {info[4]}
 \n 📞 800 10 1104
 \n 📞 800 10 1106'''
         img_address = 'https://www.boliviasegura.gob.bo/images/covid2.jpg'
-        msg = msg.body(text)
+        msg.body(text)
         msg.media(img_address)
         responded = True
 
