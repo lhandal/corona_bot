@@ -23,7 +23,8 @@ def bot():
     departamentos = ['Nacional', 'Beni','Chuquisaca','Cochabamba','La Paz','Oruro','Pando','Potosí','Santa Cruz','Tarija']
 
     if 'hi' in incoming_msg or 'hola' in incoming_msg or 'holi' in incoming_msg or 'menu' in incoming_msg:
-        text = f'*Hola!* 👋🏼\nSoy Juan, el robot mas 🔝 de esta cuarentena!\n\nA tus ordenes!'
+        text = f'''*Hola!* 👋🏼\nSoy Corona Bot, el robot mas 🔝 de esta cuarentena!\n\nA tus ordenes!\n\n
+¿Quieres saber las estadisticas de coronavirus en algun departamento de Bolivia 🇧🇴? \n Puedes mandarme el nombre del departamento o la palabra "nacional" para datos de todo el pais!'''
         msg = msg.body(text)
         responded = True
 
@@ -45,7 +46,7 @@ def bot():
         for i in departamentos:
 
             fecha, info = get_info(i)
-            text = f"""
+            part = f"""
             *{info[0]}*
             Al día {fecha} 
             Nuevos casos: {info[1]}
@@ -54,11 +55,12 @@ def bot():
             Recuperados: {info[4]}
 
             """
-            msg = msg.body(text)
+            text += part + '\n'
+        msg = msg.body(text)
         responded = True
 
     if responded == False:
-        msg.body('I only know about corona, sorry!')
+        msg.body('Lo siento, no tengo implementada esa opción aún...')
 
     return str(resp)
 
