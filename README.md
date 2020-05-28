@@ -146,6 +146,7 @@ You can configure this inside the app preferences!
 ## Usage
 
 **WhatsApp Me URL**
+
 To use this bot click on this [LINK](https://wa.me/14155238886?text=join%20religious-steady)
 
 **Manual Way**
