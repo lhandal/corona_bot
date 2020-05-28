@@ -23,8 +23,8 @@ def bot():
     departamentos = ['Nacional', 'Beni','Chuquisaca','Cochabamba','La Paz','Oruro','Pando','Potosí','Santa Cruz','Tarija']
 
     if 'hi' in incoming_msg or 'hola' in incoming_msg or 'holi' in incoming_msg or 'menu' in incoming_msg:
-        text = f'''*Hola!* 👋🏼\nSoy Corona Bot, el robot mas 🔝 de esta cuarentena!\n\nA tus ordenes!\n\n
-¿Quieres saber las estadisticas de coronavirus en algun departamento de Bolivia 🇧🇴? \n Puedes mandarme el nombre del departamento o la palabra "nacional" para datos de todo el pais!'''
+        text = f'''*Hola!* 👋🏼\nSoy Corona Bot, el robot mas 🔝 de esta cuarentena!\n\nA tus ordenes!\n
+¿Quieres saber las estadisticas de coronavirus en algun departamento de Bolivia 🇧🇴? \n\n Puedes mandarme el nombre del departamento o la palabra "nacional" para datos de todo el pais!'''
         msg = msg.body(text)
         responded = True
 
