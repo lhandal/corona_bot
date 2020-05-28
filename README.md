@@ -16,8 +16,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/lhandal/corona-bot/blob/master/images/logo.jpg">
-    <img src="https://github.com/lhandal/corona-bot/blob/master/images/logo.jpg" width="600">
+  <a href="images/logo.jpg">
+    <img src="images/logo.jpg" width="600">
   </a>
 
   <h3 align="center">CORONAVIRUS BOLIVIA 🇧🇴 WHATSAPP BOT</h3>
@@ -61,8 +61,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/lhandal/corona-bot/blob/master/images/probs.jpg">
-    <img src="https://github.com/lhandal/corona-bot/blob/master/images/probs.jpg" width="1000">
+  <a href="images/probs.jpg">
+    <img src="images/probs.jpg" width="1000">
   </a>
   </p>
 </p>
@@ -132,9 +132,9 @@ You can configure this inside the app preferences!
 5. Copy your Heroku app URL into [Twilio's sandbox](https://www.twilio.com/console/sms/whatsapp/sandbox)
 <!-- PROJECT LOGO -->
 <br />
-<p align="center">
-  <a href="https://github.com/lhandal/corona-bot/blob/master/images/sandbox.png">
-    <img src="https://github.com/lhandal/corona-bot/blob/master/images/sandbox.png" width="300">
+<p align="left">
+  <a href="images/sandbox.png">
+    <img src="images/sandbox.png" width="400">
   </a>
   </p>
 </p>
@@ -148,7 +148,7 @@ To use this bot click on this [LINK](https://wa.me/14155238886?text=join%20relig
 
 **Manual Way**
 
-Simply send a WhatsApp message to **(+1) 415523 8886** with code **join religious-steady**.
+Simply send a WhatsApp message to **+1 (415) 523-8886** with code **join religious-steady**.
 It will show a message saying connected to sandbox.
 Now start talking by saying  **Hi | Hola | Hello | Menu** and it will display the followup chat options.
 
