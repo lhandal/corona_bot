@@ -47,7 +47,7 @@ Recuperados: {info[4]}
         text = '''Si tienes los uno de estos síntomas y tuviste contacto cercano con algún caso positivo o sospechoso de COVID-19, o estuviste en alguna región de Bolivia o el exterior con casos positivos ponte en contacto con las líneas gratuitas.
 \n 📞 800 10 1104
 \n 📞 800 10 1106'''
-        img_address = 'https://github.com/lhandal/corona_bot/tree/master/static_images/sintomas.png'
+        img_address = 'https://www.boliviasegura.gob.bo/images/covid2.jpg'
         msg.body(text)
         msg.media(img_address)
         responded = True
