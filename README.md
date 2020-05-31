@@ -141,6 +141,9 @@ You can configure this inside the app preferences!
   </p>
 </p>
 
+6. Go to the [kaffeine heroku](http://kaffeine.herokuapp.com/) app and paste the name of your app in there.
+If you don't know, after 30 minutes of inactivity, Heroku puts your app to _sleep_ (idle) if you are using their free tier. Most of the times that is perfectly fine, since a request or ping will wake it up. Since I'm using another script to send scheduled updates, I need the app to be constantly running. Kaffeine pings your app every 25 minutes to avoid idleness.
+
 
 <!-- USAGE EXAMPLES -->
 ## Usage
