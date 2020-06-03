@@ -6,7 +6,7 @@ from twilio.rest import Client
 from random import randint
 
 date_dict = {'Enero':1, 'Febrero':2, 'Marzo':3, 'Abril':4, 'Mayo':5, 'Junio':6, 'Julio':7, 'Agosto':8, 'Septiembre':9, 'Octubre':10, 'Noviembre':11, 'Diciembre':12}
-contacts = ['+34695686937']
+contacts = ['+34695686937', '+59177292256']
 enc_sid = b'QTZDNDY5NmE3ZGY0YmNhYWNkM2M3NTJlNWM0OGJiNzU4ZmM2YTA3NWJjMGE5OTU1YWE5YWM1MGRmYjM3MjE3Ng=='
 departamentos = ['Bolivia', 'Beni', 'Chuquisaca', 'Cochabamba', 'La Paz', 'Oruro', 'Pando', 'Potosí', 'Santa Cruz', 'Tarija']
 
