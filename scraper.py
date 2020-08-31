@@ -20,18 +20,19 @@ def get_info(dept):
     except IndexError:
         nacional_hoy = cleanhtml(soup.find_all('h4')[1]).split('CONFIRMADOS HOY: ')[1]
 
-    nacional_total = cleanhtml(soup.find_all('td')[:3][0])
-    nacional_decesos = cleanhtml(soup.find_all('td')[:3][1])
-    nacional_recuperados = cleanhtml(soup.find_all('td')[:3][2])
+    nacional_total = cleanhtml(soup.find_all('td')[4:7][0])
+    nacional_decesos = cleanhtml(soup.find_all('td')[4:7][1])
+    nacional_recuperados = cleanhtml(soup.find_all('td')[4:7][2])
 
     nacional =['Bolivia', nacional_hoy, nacional_total, nacional_decesos, nacional_recuperados]
     bolivia = ['Bolivia', nacional_hoy, nacional_total, nacional_decesos, nacional_recuperados]
 
     ls = []
-    for element in soup.find_all('td')[3:48]:
+    for element in soup.find_all('td')[7:48]:
         ls.append(cleanhtml(element))
-
+    # ls = ls[4:]
     departamentos = ls[0::5]
+    print(ls)
 
     step=0
     for dep in departamentos:
