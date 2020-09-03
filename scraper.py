@@ -28,7 +28,7 @@ def get_info(dept):
     bolivia = ['Bolivia', nacional_hoy, nacional_total, nacional_decesos, nacional_recuperados]
 
     ls = []
-    for element in soup.find_all('td')[7:48]:
+    for element in soup.find_all('td')[7:52]:
         ls.append(cleanhtml(element))
     # ls = ls[4:]
     departamentos = ls[0::5]
