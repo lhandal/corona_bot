@@ -10,25 +10,28 @@ def cleanhtml(raw_html):
     return cleantext
 
 def get_info(dept):
-    page = requests.get('https://www.boliviasegura.gob.bo/')
+    page = requests.get('https://www.boliviasegura.gob.bo/datos.php')
     soup = BeautifulSoup(page.content, 'html.parser')
 
-    fecha = cleanhtml(soup.find_all('h5')[0])
+    try:
+        fecha = re.search(r'Reporte Epidemiológico al (.*?)\n', soup.text).group(1)
+    except:
+        fecha = cleanhtml(soup.find_all('h1')[1]).split('Reporte Epidemiológico al ')[1]
 
     try:
         nacional_hoy = cleanhtml(soup.find_all('h4')[0]).split('CONFIRMADOS HOY: ')[1]
     except IndexError:
         nacional_hoy = cleanhtml(soup.find_all('h4')[1]).split('CONFIRMADOS HOY: ')[1]
 
-    nacional_total = cleanhtml(soup.find_all('td')[4:7][0])
-    nacional_decesos = cleanhtml(soup.find_all('td')[4:7][1])
-    nacional_recuperados = cleanhtml(soup.find_all('td')[4:7][2])
+    nacional_total = cleanhtml(soup.find_all('td')[0])
+    nacional_decesos = cleanhtml(soup.find_all('td')[1])
+    nacional_recuperados = cleanhtml(soup.find_all('td')[2])
 
     nacional =['Bolivia', nacional_hoy, nacional_total, nacional_decesos, nacional_recuperados]
     bolivia = ['Bolivia', nacional_hoy, nacional_total, nacional_decesos, nacional_recuperados]
 
     ls = []
-    for element in soup.find_all('td')[7:52]:
+    for element in soup.find_all('td')[3:48]:
         ls.append(cleanhtml(element))
     # ls = ls[4:]
     departamentos = ls[0::5]
